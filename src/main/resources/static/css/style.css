@@ -14,3 +14,17 @@
 	margin-left: 10px;
     margin-right: 10px;
 }
+
+.alert{
+	margin-top: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#salvar{
+	margin-left: 16px;
+}
+
+.panel-title{
+	font-weight: bold;
+}

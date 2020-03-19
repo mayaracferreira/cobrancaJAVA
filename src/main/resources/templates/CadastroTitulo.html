@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 
 <title>Cadastro de Título</title>
@@ -22,58 +23,77 @@
 		</nav>
 	</div>
 	
-	<form class="form-horizontal">
+	<form class="form-horizontal" method="POST" action="/titulos">
+	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+	<button type="button" class="close" data-dismiss="alert"></button>
+	<span>Título salvo com sucesso!</span>
+	</div>
+	
+	
+	
 	<div class="card card-body novoTitulo" >
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">Novo Título</h1>
+				<h1 class="panel-title" >Novo Título  <img src="/img/medalha.png" width="50" height="50"></h1>
 
 			</div>
 		</div>
 		
 			<div class="card card-body">
 			<div class="form-group row">
-				<label for="descricao" class="col-sm-2 col-form-label text-right">Descrição</label>
+				<label for="descricao" class="col-sm-2 col-form-label text-right"></h1> Descrição <img src="/img/lapis.png" width="30" height="30"></label>
 				<div class="col-sm-4">
-					<input type="text" class=" form-control" id="descricao" placeholder="ex: Conta de Luz">
+					<input type="text" class=" form-control" id="descricao"  name="descricao" placeholder="ex: Conta de Luz">
 				</div>
 			</div>
 		
 			<div class="form-group row">
 				<label for="dataVencimento"
-					class="col-sm-2 col-form-label text-right">Data De
-					Vencimento</label>
+					class="col-sm-2 col-form-label text-right"> Data De
+					Vencimento <img src="/img/calendario.png" width="30" height="30"></label>
 				<div class="col-sm-2">
-					<input type="text" class=" form-control" id="dataVencimento">
+					<input type="text" class=" form-control" id="dataVencimento" name="dataVencimento" placeholder="ex: 15/01/2019"/>
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="valor" class="col-sm-2 col-form-label text-right">Valor</label>
+				<label for="valor" class="col-sm-2 col-form-label text-right"> Valor <img src="/img/dinheiro.png" width="30" height="30"></label>
 				<div class="col-sm-2">
-					<input type="text" class=" form-control js-currency" id="valor"
+					<input type="text" class=" form-control js-currency" id="valor" name="valor"
 						placeholder="ex: 100,00">
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="status" class="col-sm-2 col-form-label text-right">Status</label>
+				<label for="status" class="col-sm-2 col-form-label text-right"> Status <img src="/img/ampulheta.png" width="30" height="30"></label>
 				<div class="col-sm-2">
-					<select class=" form-control" name='status'>
-						<option>--------</option>
-						<option>Pendente</option>
-						<option>Recebido</option>
+					<select class=" form-control" name="status">
+						<option value="PENDENTE">Pendente</option>
+						<option value="RECEBIDO">Recebido</option>
 					</select>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label text-rigth"></label>
+			<label class="col-sm-2" ></label>
 				<div>
-					<button type="submit" class="btn btn-success">Salvar</button>
+					
+					<button type="submit" class="btn btn-success" id="salvar">Salvar</button>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+			<label class="col-sm-7" ></label><img src="/img/cadastro2.png" width="230" height="230">
+				<div>
+					
+				
 				</div>
 			</div>
 	</div>
 		</div>
+		
+		
 	</form>
+	
+	
 
 
 
