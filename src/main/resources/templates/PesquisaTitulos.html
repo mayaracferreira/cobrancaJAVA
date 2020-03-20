@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<title>Pesquisa de Título</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+	<div>
+		<nav class="navbar navbar-dark bg-dark">
+			<div class="text-right" id="PesquisaTitulos">
+				<a class="navbar-brand" href="/titulos"> <img
+					src="/img/lupa.png" width="50" height="50">
+				</a> <a>Pesquisa</a>
+			</div>
+		</nav>
+	</div>
+	
+		<div class="card card-body PesquisaTitulos" >
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="panel-title" >Pesquisa de Títulos   <img src="/img/lupa.png" width="35" height="35"> </h1>
+			</div>
+			
+			<div class="panel-body">
+			<table class="table table-bordered table-striped">
+			<thead>
+			<tr>
+				
+				<th class="text-center" width="10%">Código  # </th>
+				<th>Descrição  <img src="/img/lapis.png" width="20" height="20"></th>
+				<th class="text-center" width="15%">Data De Vencimento  <img src="/img/calendario.png" width="20" height="20"></th>
+				<th class="text-right" width="10%">Valor  <img src="/img/dinheiro.png" width="20" height="20"></th>
+				<th class="text-center" width="10%">Status  <img src="/img/ampulheta.png" width="20" height="20"></th>
+				<th width="15%"></th>
+								
+								
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+				
+					<td colspan="6"> Nenhum Título foi encontrado</td>
+				</tr>
+			
+			
+			
+			
+			
+			</tbody>
+			
+			</table>		
+			</div>
+		</div>
+		</div>
+		
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/jquery.maskMoney.min.js"></script>
+	
+	</body>
+
+</html>
