@@ -12,7 +12,7 @@
 <body>
 
 	<div>
-		<nav class="navbar navbar-dark bg-dark">
+		<nav class="navbar navbar-light">
 			<div class="text-right" id="cadastro">
 				<a class="navbar-brand" href="/titulos/novo"> <img
 					src="/img/cadastro.png" width="40" height="40">
@@ -46,15 +46,17 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="panel-title" >Novo Título  <img src="/img/medalha.png" width="40" height="40"></h1>
-			<a class="btn btn-link botao-novo" href="/titulos" id="titulosSalvos" >Pesquisar títulos  salvos</a>
+			<a class="btn btn-outline-primary btn-link botao-novo" href="/titulos" id="titulosSalvos" >Pesquisar títulos  salvos</a>
 			</div>
 		</div>
 		
 			<div class="card card-body">
+				<input type="hidden" th:filed="*{codigo}"/>
+			
 			<div class="form-group row">
 				<label for="descricao" class="col-sm-2 col-form-label text-right"></h1> Descrição <img src="/img/lapis.png" width="30" height="30"></label>
 				<div class="col-sm-4">
-					<input type="text" class=" form-control" id="descricao"  name="descricao" placeholder="ex: Conta de Luz">
+					<input type="text" class=" form-control" id="descricao"  th:field="*{descricao}" placeholder="ex: Conta de Luz">
 				</div>
 			</div>
 		
@@ -63,13 +65,13 @@
 					class="col-sm-2 col-form-label text-right"> Data De
 					Vencimento <img src="/img/calendario.png" width="30" height="30"></label>
 				<div class="col-sm-2">
-					<input type="text" class=" form-control" id="dataVencimento" name="dataVencimento" placeholder="ex: 15/01/2019"/>
+					<input type="text" class=" form-control" id="dataVencimento" th:field="*{dataVencimento}" placeholder="ex: 15/01/2019"/>
 				</div>
 			</div>
-			<div class="form-group row">
+			<div class="form-group row" th:classappend="${#fields.hasErrors('valor') } ? 'is-invalid'">
 				<label for="valor" class="col-sm-2 col-form-label text-right"> Valor <img src="/img/dinheiro.png" width="30" height="30"></label>
 				<div class="col-sm-2">
-					<input type="text" class=" form-control js-currency" id="valor" name="valor"
+					<input type="text" class=" form-control js-currency" id="valor" th:field="*{valor}"
 						placeholder="ex: 100,00">
 				</div>
 			</div>
@@ -79,7 +81,6 @@
 					<select class=" form-control" name="status">
 						<option value="PENDENTE">Pendente</option>
 						<option value="RECEBIDO">Recebido</option>
-						<option value="CANCELADO">Cancelado</option>
 					</select>
 				</div>
 			</div>

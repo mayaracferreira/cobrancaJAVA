@@ -1,7 +1,7 @@
 #cadastro{
-	color:#fff;
+	color:#000000;
 	float: left;
-	font-weight: bold;
+	font-family: fantasy;
 	font-size: 25px;
 }
 
@@ -29,11 +29,13 @@
 .panel-title{
 	font-weight: bold;
 	font-size: 25px;
+		float: left;
+		margin: 10px;
+	
 }
 
 #PesquisaTitulos{
-	color:#fff;
-	float: left;
+	color:#000000;
 	font-weight: bold;
 	font-size: 25px;
 	
@@ -43,6 +45,7 @@
 .PesquisaTitulos{
 	margin-left: 10px;
     margin-right: 10px;
+    margin-top: 10px;
 	
 }
 
@@ -58,5 +61,12 @@
 	float:right;
 }
 
+#lupa{
+	margin: 0px 0px 16px 0px;
+}
+
+.navbar-light{
+	background-color: #585858;
+}
 
 
