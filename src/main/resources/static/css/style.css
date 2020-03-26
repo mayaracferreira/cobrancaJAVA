@@ -8,12 +8,19 @@
 .navbar{
 	margin-left: 10px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .novoTitulo{
 	margin-left: 10px;
     margin-right: 10px;
+    margin-top: 20px;
     font-size: 20px;
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+
+
 }
 
 .alert{
@@ -37,17 +44,19 @@
 #PesquisaTitulos{
 	color:#000000;
 	font-weight: bold;
-	font-size: 25px;
-	
+	font-size: 25px;	
 	
 }
 
 .PesquisaTitulos{
 	margin-left: 10px;
     margin-right: 10px;
-    margin-top: 10px;
-	
+    margin-top: 20px;
+    background-color: rgba(245, 245, 245, 0.6);
+    
 }
+
+
 
 #linknovo{
 	margin-left: 1700px;
@@ -59,6 +68,7 @@
 
 .botao-novo{
 	float:right;
+	margin:20px;
 }
 
 #lupa{
@@ -68,5 +78,25 @@
 .navbar-light{
 	background-color: #585858;
 }
+
+body {  
+  background-image: url("/img/fundo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+	
+}
+
+.card-body{
+	background-color: rgba(245, 245, 245, 0.6);
+	
+}
+
+.esse{
+	margin-top: 20px;
+	margin-left: 10px;
+    margin-right: 10px;
+
+}
+
 
 

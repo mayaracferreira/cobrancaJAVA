@@ -32,6 +32,7 @@ public class TituloController {
 	private Titulos titulos;
 	
 	
+	
 	@RequestMapping("/novo")
 	public ModelAndView novo() {
 		ModelAndView mv= new ModelAndView(CADASTRO_VIEW);
@@ -44,6 +45,8 @@ public class TituloController {
 		if (errors.hasErrors()) {
 			return CADASTRO_VIEW;
 		}
+			
+		
 		titulos.save(titulo);
 		attributes.addFlashAttribute("mensagem", "Título salvo com sucesso!");
 		return "redirect:/titulos/novo";
@@ -67,23 +70,14 @@ public class TituloController {
 		
 	}
 	
-	@RequestMapping(value = "{codigo}", method = RequestMethod.DELETE)
-	public String excluir(@PathVariable Long codigo, RedirectAttributes attributess) {
-			titulos.deleteById(codigo);
-			
-		attributess.addFlashAttribute("mensagem", "Título excluído com sucesso!");
-		return "redirect:/titulos";
 		
 	
-		
-	}
-	
-	@RequestMapping(value = "/titulos/delete/{codigo}", method = RequestMethod.GET)
-    public String excluir(@PathVariable ("codigo")Long codigo) {
+	@RequestMapping(value = "/delete/{codigo}", method = RequestMethod.GET)
+    public String excluir(@PathVariable ("codigo")Long codigo ) {
             titulos.deleteById(codigo);
             
    
-        return "PesquisaTitulos";
+        return "redirect:/titulos";
     }
 	
 	

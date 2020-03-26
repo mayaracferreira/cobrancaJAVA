@@ -9,6 +9,7 @@
 
 <section layout:fragment="conteudo">
 
+
 	<div class="card card-body PesquisaTitulos">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -18,11 +19,10 @@
 							height="30" id="lupa">
 					</h1>
 					<a class="btn btn-outline-primary btn-link botao-novo"
-						href="/titulos/novo">Novo título
-						</button>
-					</a>
+						href="/titulos/novo">Novo título </a>
 				</div>
 			</div>
+
 
 			<div class="panel-body">
 				<table class="table table-bordered table-striped">
@@ -47,21 +47,32 @@
 							<td class="text-center" th:text="${titulo.codigo}">1</td>
 							<td th:text="${titulo.descricao}"></td>
 							<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
-							<td class="text-rigth" th:text="|R$ ${{titulo.valor}}|"></td>
+							<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
 							<td class="text-center"><span class="label"
 								th:text="${titulo.status.descricao}"
 								th:classappend="${#strings.toString(titulo.status) == 'PENDENTE' ? 'badge badge-pill badge-danger' : 'badge badge-pill badge-success'}"></span>
 							</td>
-							<td class="text-center"><a class="btn btn-link btn-xs"
-								th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}"> <img
-									src="/img/editar.png" width="35" height="35">
-									
-									
-							</a> <a class="btn btn-link btn-xs" data-taggle="modal" data-target="excluirModal" th:href="@{/titulos/delete/{codigo}(codigo=${titulo.codigo})}"> 
-								<span class="glyphicon glyphicon-remove"></span>
-							<img src="/img/excluir2.png" width="35" height="35">
+							<td class="text-center">
+							<a class="btn btn-link btn-xs"
+								th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}"
+								title="Editar" rel="tooltip" data-placement="top"> <img
+									src="/img/editar.png" width="25" height="25">
+
+
+							</a> <a class="btn btn-link btn-xs" 
+								th:href="@{/titulos/delete/{codigo}(codigo=${titulo.codigo})}"
+								title="Excluir" rel="tooltip" data-placement="top"><span
+									class="glyphicon glyphicon-remove"></span> <img
+									src="/img/excluir2.png" width="25" height="25">
 							</a>
+							<a class="btn btn-link btn-xs js-atuliazar-status" th:if="${titulo.status.descricao}"
+							title="Receber" rel="tooltip" data-placement="top"
+							th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}">
 							
+							<span><img src="/img/verificado.png" width="30" height="30"></span>
+							
+							
+							</a>
 							</td>
 
 						</tr>
@@ -78,12 +89,12 @@
 
 
 					</tbody>
-		
+
 				</table>
 			</div>
 		</div>
 
-		<div layout:insert="DialogoConfirmacaoExclusao"></div>
+
 
 
 
