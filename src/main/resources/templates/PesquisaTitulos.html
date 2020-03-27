@@ -22,6 +22,22 @@
 						href="/titulos/novo">Novo título </a>
 				</div>
 			</div>
+			
+			<div class="panel-body" >
+				<form method="GET" class="form-horizontal" action="/titulos" th:object="${filtro}">
+					<div class="form-group ">
+						<div class="col-sm-4">
+							<div class="input-group">
+							<input class="form-control" placeholder="Qual título você está procurando?"
+							autofocus="autofocus" th:field="*{descricao}" name="descricao"></input>
+							<span class="input-group-btn">
+								<a class="btn btn-outline-primary " type="submit">Pesquisar</a>
+							</span>
+						</div>
+					</div>
+					</div>
+				</form>
+			</div>
 
 
 			<div class="panel-body">
@@ -65,7 +81,7 @@
 									class="glyphicon glyphicon-remove"></span> <img
 									src="/img/excluir2.png" width="25" height="25">
 							</a>
-							<a class="btn btn-link btn-xs js-atuliazar-status" th:if="${titulo.status.descricao}"
+							<a class="btn btn-link btn-xs js-atuliazar-status" th:if="${titulo.status} == 'PENDENTE' "
 							title="Receber" rel="tooltip" data-placement="top"
 							th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}">
 							

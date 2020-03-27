@@ -2,7 +2,6 @@ package com.gft.cobranca1.controller;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.gft.cobranca1.CadastroTituloService;
 import com.gft.cobranca1.model.StatusTitulo;
 import com.gft.cobranca1.model.Titulo;
 import com.gft.cobranca1.repository.Titulos;
+import com.gft.cobranca1.repository.filter.tituloFilter;
 
 
 
@@ -30,6 +31,9 @@ public class TituloController {
 	
 	@Autowired
 	private Titulos titulos;
+	
+	@Autowired
+	private CadastroTituloService cadastroTituloService;
 	
 	
 	
@@ -54,8 +58,9 @@ public class TituloController {
 	}
 	
 	@RequestMapping
-	public ModelAndView pesquisar() {
-		List<Titulo> todosTitulos = titulos.findAll();
+	public ModelAndView pesquisar(@ModelAttribute("filtro") tituloFilter filtro) {
+		List<Titulo> todosTitulos = cadastroTituloService.filtrar(filtro);
+		
 		ModelAndView mv = new ModelAndView("PesquisaTitulos");
 		mv.addObject("titulos", todosTitulos);
 		return mv;
